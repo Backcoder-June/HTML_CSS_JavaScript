@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>writeboard</title>
+
+    <h1> 게시물 작성</h1>
+</head>
+<body>
+
+<div>
+    <form action="/boardwritesuccess.html">
+    <table border="5">
+        <tr>
+            <th>제목</th>
+            <td>
+                <input type="text" name="title">
+            </td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td>
+                <textarea name="content" rows="3" cols="60"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td>
+                <input type="radio" name="language" value="oracle">oracle
+                <input type="radio" name="language" value="jsp">jsp
+                <input type="radio" name="language" value="spring">spring
+            </td>
+        </tr>
+        <tr>
+            <th>암호</th>
+            <td>
+                <input type="password" maxlength="20">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="작성하기">
+            </th>
+        </tr>
+    </table>
+    </form>
+</div>
+
+<br>
+<form action="/board/boardstart.html">
+    <button type="submit" value="홈으로" class="btn-primary">홈으로</button>
+</form>
+
+
+</body>
+</html>

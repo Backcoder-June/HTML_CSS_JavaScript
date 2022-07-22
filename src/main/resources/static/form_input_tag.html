@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form_input</title>
+</head>
+<body>
+
+<h1>form + input</h1>
+
+<form action="a.jsp">
+     아이디 &nbsp;&nbsp; <input type="text" name="scanner" size="10" maxlength="10">
+    <br>
+    비밀번호&nbsp;<input type="password" name="pw"  size="10" maxlength="10">
+    <Br>
+    <Br>
+    자기소개<br>
+    <textarea rows="10" cols="50"></textarea>
+    <br>
+     <input type="hidden" name="admin" value="true">
+    <br>
+
+
+    좋아하는 메뉴 : <select name="menu">
+    <optgroup label="음식">
+        <option>짜장</option>
+        <option>짜장</option>
+    </optgroup>
+    <optgroup label="후식">
+        <option>짜장</option>
+        <option selected="selected">탕수육</option>
+    </optgroup>
+    </select>
+    <br>
+    <br>
+    성별 : <input type="radio" name="gender" value="man"> male
+    <input type="radio" name="gender" value="woman">female
+    <Br>
+    취미 : <input type="checkbox" name="hobby" value="bike">자전거
+    <input type="checkbox" name="hobby" value="coding">코딩
+    <input type="checkbox" name="hobby" value="reading">독서
+    <br>
+    <br>
+    첨부파일 <input type="file" name="fileupload">
+    <br>
+    <br>
+    <input type="submit" value="확인">
+    <input type="reset" value="취소">
+
+</form>
+
+<br>
+<br>
+<hr>
+<Br>
+
+<form action="action.jsp" name="login">
+    <table border="5">
+            <tr>
+                <th>
+                    아이디입력
+                </th>
+                <td>
+       <input type="text" maxlength="20" name="id">
+                </td>
+                <th rowspan="2">
+                        <input type="submit" value="로그인">
+                        <input type="reset" value="초기화">
+                </th>
+            </tr>
+        <tr>
+            <th>
+                암호입력
+            </th>
+            <td>
+                    <input type="password" maxlength="20" name="pw">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<hr>
+
+<form action="html5.jsp">
+    색상<input type="color" name="co"><br>
+    날짜<input type="date" name="da"><br>
+    url<input type="url" name="ur"><br>
+    이메일<input type="email" name="em"><br>
+    전화번호<input type="tel" name="te"><br>
+    숫자<input type="number" name="nu" max="5" min="1"><br>
+    범위<input type="range" name="re"><br>
+    <input type="submit" value="전송">
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
