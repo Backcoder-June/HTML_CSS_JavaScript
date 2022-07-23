@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>boardlist</title>
+
+
     <h1>글목록 페이지</h1>
 </head>
 
@@ -22,7 +24,7 @@
 </div>
 
 <div>
-<table border="5">
+<table border="5" >
     <thead>
     <tr>
         <th>번호</th>
@@ -33,46 +35,23 @@
     </thead>
 
     <tbody>
-    <tr>
-        <td>1</td>
-        <td>
-            <a href="/boarddetial.html">제목1</a>
-        </td>
-        <td>june</td>
-        <td>0</td>
-    </tr>
+    <tr th:each="board : ${boards}">
 
-    <tr>
-        <td>2</td>
-        <td>
-            <a href="/boarddetial.html">제목2</a>
+
+        <td th:text="${board.id}">
         </td>
-        <td>tome</td>
+
+
+        <td>
+        <a th:href="@{/board/details}">
+           <p th:text="${board.title}"></p>
+        </a>
+        </td>
+
+        <td th:text="${board.name}"></td>
+
         <td>0</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>
-            <a href="/boarddetial.html">제목3</a>
-        </td>
-        <td>luna</td>
-        <td>11</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>
-            <a href="/boarddetial.html">제목4</a>
-        </td>
-        <td>tera</td>
-        <td>22</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>
-            <a href="/boarddetial.html">제목5</a>
-        </td>
-        <td>faker</td>
-        <td>11</td>
+
     </tr>
     </tbody>
 </table>
