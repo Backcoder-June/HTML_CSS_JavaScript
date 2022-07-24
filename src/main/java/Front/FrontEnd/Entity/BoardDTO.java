@@ -8,6 +8,9 @@ public class BoardDTO {
     private String name;
 
 
+    public Board toEntity() {
+        return new Board(id, title, content, name);
+    }
 
     public BoardDTO(){}
     public BoardDTO(int id, String title, String content, String name) {

@@ -9,7 +9,7 @@
 <body>
 
 <div>
-    <form action="/boardwritesuccess.html">
+    <form action="/writeboard" method="post">
     <table border="5">
         <tr>
             <th>제목</th>
@@ -26,9 +26,9 @@
         <tr>
             <th>작성자</th>
             <td>
-                <input type="radio" name="language" value="oracle">oracle
-                <input type="radio" name="language" value="jsp">jsp
-                <input type="radio" name="language" value="spring">spring
+                <input type="radio" name="name" value="oracle">oracle
+                <input type="radio" name="name" value="jsp">jsp
+                <input type="radio" name="name" value="spring">spring
             </td>
         </tr>
         <tr>
@@ -47,7 +47,7 @@
 </div>
 
 <br>
-<form action="/board/boardstart.html">
+<form action="/">
     <button type="submit" value="홈으로" class="btn-primary">홈으로</button>
 </form>
 

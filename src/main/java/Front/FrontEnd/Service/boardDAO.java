@@ -1,6 +1,7 @@
 package Front.FrontEnd.Service;
 
 import Front.FrontEnd.Entity.Board;
+import Front.FrontEnd.Entity.BoardDTO;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -60,6 +61,47 @@ return list;
 }
 
 
+//
+
+    public void saving(Board board){
+
+
+        Connection con = null;
+
+        try {
+            con = DriverManager.getConnection
+                    ("jdbc:mysql://127.0.0.1:3306/backcoder", "backcoder", "1111");
+
+//SQL
+
+            String sql = "insert into board(title, content, name) values(?,?,?)";
+
+            PreparedStatement pr = con.prepareStatement(sql);
+
+            pr.setString(1, board.getTitle());
+            pr.setString(2, board.getContent());
+            pr.setString(3, board.getName());
+
+
+            pr.executeUpdate();
+
+
+        }catch(
+                SQLException e)
+
+        {
+            System.err.println("연결 오류" + e.getMessage());
+            e.printStackTrace();
+        }
+        finally
+
+         {
+            try {
+                con.close();
+            } catch (SQLException e) {
+            }
+        }
+    }
 
 
 
