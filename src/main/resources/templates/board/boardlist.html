@@ -5,11 +5,36 @@
     <title>boardlist</title>
 
 
-    <h1>글목록 페이지</h1>
+
+    <style>
+h1{color:orange; text-align:center;
+    border: 5px solid yellow;
+    margin-left : 500px;
+    padding : 10px;
+border-radius: 30px;
+width : 300px;
+box-shadow : 10px 10px 5px orange;
+text-shadow : 5px 5px 5px pink;
+ }
+
+a:link{color:yellow;}
+a:visited{color:purple;}
+a:hover{color:blue;}
+    </style>
+
+
 </head>
 
 <body>
-<div>
+
+<h1>글목록 페이지</h1>
+
+<Br>
+
+
+<div style="margin-left:20px; margin-bottom:50px; border: 5px solid green;
+padding : 5px;
+">
 <form action="/boardsearch.html">
 
     <select name="category" >
@@ -18,15 +43,21 @@
         <option>작성자</option>
 
     </select>
-    검색어:<input type="text" name="search">
-    <input type="submit" value="검색">
+    &emsp; 검색어 : <input type="text" name="search">
+    <input type="submit" value="검색" style="font-size:15px;">
 </form>
 </div>
 
-<div>
-<table border="5" >
+<div style="
+text-align:center;
+margin-left:400px;
+margin-right: 500px;
+border : 1px solid yellow;
+width : 600px;
+">
+<table border="5" style="width : 600px; ">
     <thead>
-    <tr>
+    <tr style="background-color:gray;" >
         <th>번호</th>
         <th>제목</th>
         <th>작성자</th>
@@ -59,9 +90,8 @@
 
 <br>
 
-<div>
+<div style="text-align:center;">
     <h3>페이지번호</h3>
-    <br>
     <a href="/board/boardlist.html">1&nbsp;</a>
     <a href="/board/boardlist.html">2&nbsp;</a>
     <a href="/board/boardlist.html">3&nbsp;</a>
@@ -69,16 +99,24 @@
     <a href="/board/boardlist.html">5&nbsp;</a>
 
 </div>
-
 <br>
-<div>
+<br>
+<div style="margin-left : 50px;">
 <form action="/">
-    <button type="submit" class="btn btn-primary">게시판홈</button>
+    <button type="submit" class="btn btn-primary" style="font-size:20px;
+background-color:green;
+">게시판홈</button>
 </form>
     <br>
 
     <form action="/writeboard">
-        <button type="submit" class="btn btn-success">글쓰기</button>
+        <button type="submit" class="btn btn-success"
+                style="font-size:20px;
+                background-color:blue;
+
+">
+
+            글쓰기</button>
     </form>
 
 </div>
