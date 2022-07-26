@@ -9,7 +9,7 @@
     <style>
 h1{color:orange; text-align:center;
     border: 5px solid yellow;
-    margin-left : 500px;
+    margin : auto;
     padding : 10px;
 border-radius: 30px;
 width : 300px;
@@ -20,6 +20,15 @@ text-shadow : 5px 5px 5px pink;
 a:link{color:yellow;}
 a:visited{color:purple;}
 a:hover{color:blue;}
+
+
+table thead:first-child{background-color:silver;}
+
+table,td,tr,thead {border:1px solid yellow;
+ width:500px; margin:auto; text-align:center;
+ border-collapse:collapse;}
+
+
     </style>
 
 
@@ -48,16 +57,10 @@ padding : 5px;
 </form>
 </div>
 
-<div style="
-text-align:center;
-margin-left:400px;
-margin-right: 500px;
-border : 1px solid yellow;
-width : 600px;
-">
-<table border="5" style="width : 600px; ">
+<div>
+<table>
     <thead>
-    <tr style="background-color:gray;" >
+    <tr>
         <th>번호</th>
         <th>제목</th>
         <th>작성자</th>
@@ -90,6 +93,7 @@ width : 600px;
 
 <br>
 
+
 <div style="text-align:center;">
     <h3>페이지번호</h3>
     <a href="/board/boardlist.html">1&nbsp;</a>
@@ -120,7 +124,6 @@ background-color:green;
     </form>
 
 </div>
-
 
 
 
