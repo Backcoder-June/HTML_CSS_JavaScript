@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inout</title>
+</head>
+<body>
+
+<script>
+
+<!--    alert("크롬 최적화가 완료되었습니다.");-->
+
+<!--    document.write("<h1> 이거 적용된다 </h1>");-->
+
+const a = 3.14;
+console.log(a);
+let b =20;
+
+const first = prompt("첫 번째 숫자");
+const calc = prompt("+ - * / 중 선택하세요");
+const second = prompt("두 번째 숫자");
+
+if( isNaN(first) || isNaN(second) ){
+alert("숫자만 입력하세요")}
+else{
+let result = 0;
+if (calc == "+"){
+result = parseInt(first) + parseInt(second);
+}else if(calc == "-"){
+result = parseInt(first) - parseInt(second);
+}else if(calc == "*"){
+result = parseInt(first) * parseInt(second);
+}else if(calc == "/"){
+result = parseInt(parseInt(first) / parseInt(second));
+} else {
+result = "계산불가";
+let c = confirm("연산자를 확인하세요");
+if(c == true){document.write(calc);}
+else{ document.write("다시 입력해봅시다" + "<br>"); } }
+
+document.write( first + calc + second + "=" + result + " 입니다");
+
+}
+
+
+
+
+
+
+</script>
+
+
+
+<!--
+const calresult =`${first} ${calc} ${second} = `;
+const sdaf = `${first + second}`;
+
+document.write(sdaf);
+document.write(calresult);
+-->
+
+
+</body>
+</html>

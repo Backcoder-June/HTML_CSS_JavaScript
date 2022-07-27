@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+</head>
+<body>
+
+<script>
+
+let b = "<br>";
+
+  let now = new Date();
+  document.write(now + b);
+  document.write(now.toString() + b);
+  document.write(now.toLocaleString() + b);
+  document.write(now.toLocaleDateString() + b);
+  document.write(now.toLocaleTimeString() + b);
+
+</script>
+
+<script>
+
+    function clock(){
+    let now = new Date();
+    document.write(now.toLocaleTimeString() + b);
+    }
+
+  let timer = setInterval(clock, 1000);
+
+  setTimeout( function(){clearInterval(timer)}, 10000);
+
+
+
+</script>
+
+
+
+</body>
+</html>

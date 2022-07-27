@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>operator</title>
+</head>
+<body>
+<script>
+
+    var b = "<br>";
+
+    document.write(parseInt(10/3) + b);
+
+
+document.write(parseInt("3.1415") + b );
+
+document.write(parseInt("abc") + b );
+
+
+document.write(parseFloat("3.14")+1 + b);
+
+document.write(typeof(parseFloat("3.14")) + b);
+
+document.writeln( true + true );
+document.writeln( true + false + b );
+
+document.write( 1 + undefined + b );
+document.write( 1 + null + b );
+
+document.write(Math.abs(-100) + b );
+document.write(Math.sqrt(100) + b );
+document.write(Math.round(3.14) + b );
+document.write(parseInt(Math.random()*6+1) + b );
+
+let str2 = new String("JS");
+document.write(str2 + b );
+
+document.write((str2 instanceof String) + b);
+document.write((str2.constructor == String) + b);
+
+const str3 = "javascript";
+
+document.write(str3.length + b);
+document.write(str3.indexOf("scr") + b);
+document.write(str3.toUpperCase() + b);
+document.write(str3.charAt(2) + b);
+
+document.write(str3[4]+ b);
+
+
+const st1 = "java";
+const st2 = new String("java");
+
+document.write( (st1==st2) + b );
+document.write( (st1===st2) + b );
+
+document.write( ("100" === 100) + b );
+document.write( ("100" == 100) + b );
+
+
+let result1 = typeof(100);
+
+document.write( "결과 : " +  (result1==="number" && 100=="100") + b);
+
+
+let sr1 = "java script";
+
+let contain = sr1.indexOf("scr")>=0?
+"포함":
+"미포함";
+
+document.write(contain+ b);
+
+const c1 = "alert(10);";
+document.write(c1);
+<!--eval(c1);-->
+
+let t1 = 1234;
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

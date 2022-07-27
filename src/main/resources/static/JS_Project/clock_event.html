@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+</head>
+<body>
+
+<input id="clock" type="button" value="시계">
+<input id="stop" type="button" value="중단">
+<div id="here">여기 시간 : </div>
+
+<script>
+let timer;
+document.getElementById("clock").onclick = function(){
+timer = setInterval(function(){
+document.getElementById("here").innerHTML = new Date().toLocaleTimeString();
+
+}, 1000);
+}
+
+document.getElementById("stop").onclick = function(){
+clearInterval(timer);
+
+}
+
+
+
+</script>
+
+<script>
+
+    a = 100;
+
+var a = 50;
+a= 200;
+    alert(a);
+
+</script>
+
+
+
+</body>
+</html>
