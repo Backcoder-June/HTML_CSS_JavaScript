@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+</head>
+<body>
+
+
+<script>
+    let emp ={
+    id : 100,
+    name : "June",
+    f1 : function(){document.write("hello");
+        document.write("this 사용 : " + this.name)
+    },
+    salary : 30000.55
+    };
+
+
+emp.salary = emp.salary + 5000;
+emp.dept = "IT";
+emp.f1();
+
+//delete emp.dept;
+delete emp.date;
+
+document.write( ("id" in emp) + "<br>");
+
+if("dept" in emp){
+document.write( emp.id + " , " + emp.name + " , " + emp.salary +", " +emp.dept +"<br>" );
+} else{
+document.write( emp.id + " , " + emp.name + " , " + emp.salary +", " +"<br>" );
+}
+
+for(let v in emp){
+document.write(v + " : " + emp[v] + "<br>");
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

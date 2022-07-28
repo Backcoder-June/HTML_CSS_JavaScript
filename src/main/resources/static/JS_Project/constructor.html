@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>consturctor</title>
+</head>
+<body>
+<script>
+
+  function Emp(id, name, salary, indate){
+  this.id = id;
+  this.name = name;
+  this.salary = salary;
+  this.indate = indate;
+  this.f1 = function(salary){
+  this.salary = this.salary + salary;
+  document.write("내부함수");
+  document.write(this.salary + " " + this.indate);
+  return this.salary;
+  }
+  };
+
+  let e1 = new Emp(100, "june", 30000, new Date().toLocaleString());
+  let e2 = new Emp(200, "tom", 20000, new Date().toLocaleString());
+
+e1.f1(1000);
+e2.f1(1000);
+
+//추가 된다.
+e1.bonus = 5000;
+e1["title"] = "과장";
+
+
+if("bonus" in e1 && "title" in e1){
+document.write(e1.bonus + " " + e1.title);
+}
+if( "bonus" in e2 && "title" in e2){
+document.write(e2.bonus + " " + e2.title);
+}
+
+
+
+
+for(let v in e1){
+document.write(v + " : " + e1[v] + "<br>");}
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boarlistJS</title>
+</head>
+<body>
+
+
+번호 : <input type="text" id="num" size="3">
+제목 : <input type="text" id="title">
+내용 : <input type="text" id="content">
+<input type="button" id="save" value="게시물 저장">
+<br>
+<Br>
+<input type="button" id="output" value="게시물 조회">
+<div id="list">결과값
+</div>
+
+
+
+<script>
+
+
+
+function board(num, title, content){
+this.num = num;
+this.title = title;
+this.content = content;
+this.toString = function(){
+return "번호 : " + this.num + ", 제목 : " + this.title + ", 내용 : " + this.content
+};
+};
+
+
+let boardlist = new Array();
+
+let b1;
+
+    document.getElementById("save").onclick=
+    function(){
+     b1 = new board(document.getElementById("num").value,
+    document.getElementById("title").value,
+    document.getElementById("content").value);
+
+
+    //alert(b1.toString());
+
+    boardlist.push(b1);
+
+    alert(boardlist.length);
+    }
+
+
+//function show(){
+//for(v in boardlist){
+//let a1 = (v + " : " + boardlist[v].toString());}}
+
+
+
+
+
+
+    document.getElementById("output").onclick=
+    function(){
+    for(let p = 0; p<boardlist.length; p++){
+    document.getElementById("list").innerHTML=
+     boardlist[p].toString();}
+}
+
+</script>
+
+
+
+<!--
+1. save 버튼 클릭하면 => 입력값 가져온다.
+2. 생성자 함수로 Board 객체 생성
+3. 배열에 저장
+4. output 버튼 클릭시 list 위치에 결과물 출력
+-->
+
+
+
+</body>
+</html>

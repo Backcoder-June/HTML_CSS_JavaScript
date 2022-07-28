@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+
+
+<canvas id="paper" width="600px" height="400px" style="border:2px solid yellow"></canvas>
+
+
+<script>
+    let paper = document.getElementById("paper");
+
+    let pen = paper.getContext("2d");
+
+    pen.strokeRect(50, 50, 100, 100);
+
+    pen.fillRect(200, 50, 100, 100);
+
+    pen.beginPath();
+    pen.moveTo(150, 10);
+    pen.closePath();
+
+pen.font = "40px serif";
+pen.strokeText("Hello CanvasTest", 200, 200);
+pen.fillText("Hello CanvasTest", 200, 300);
+
+pen.beginPath();
+pen.moveTo(60,200);
+pen.lineTo(110,300);
+pen.lineTo(10,300);
+pen.closePath();
+pen.stroke();
+
+
+let myimg = new Image();
+myimg.src="chtml5.jpg";
+
+myimg.onload = function(){
+pen.drawImage(myimg, 400, 10, paper.width/3, paper.height/3);
+let copy = pen.getImageData(400,10, 100, 100);
+pen.putImageData( copy, 200, 100);
+
+}
+
+</script>
+
+
+
+
+</body>
+</html>

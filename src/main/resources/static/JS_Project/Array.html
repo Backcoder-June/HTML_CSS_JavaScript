@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script>
+let a = [];
+a[0] = 1;
+a[1] = "java";
+a[99] = 99;
+a.push(100);
+a.pop();
+a.unshift("im first!");
+a.unshift("no, im first!");
+a.shift();
+
+document.write(a.length + "<br>");
+
+//for(var i = 0; i<a.length; i++){
+//document.write(a[i] + "<br>");}
+
+for(v in a){
+document.write(v + " : " + a[v] + "<br>");}
+
+
+let b =[1, "june", function(){alert("hi");}, [1,2,3,],
+{name:"june", id:100, toString: function(){return this.id + ", " + this.name;} } ];
+
+document.write(" 구분 -- " + b.length + "<br>");
+
+//for(v in b){
+//document.write(v + " : " + b[v] + "<br>");}
+
+
+document.write( b.join("<br>"));
+
+
+</script>
+</body>
+</html>

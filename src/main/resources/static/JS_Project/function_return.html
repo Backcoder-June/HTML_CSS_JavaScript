@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>return</title>
+</head>
+<body>
+<script>
+    function f1(){
+let a = 10, b=20;
+return a+b;
+}
+
+var f1result = f1();
+document.write(f1result);
+
+function f3(a, b){
+return a+b; }
+
+var f3result = f3(10,20);
+
+document.write(f3result);
+document.write(f3(20,30));
+document.write(f3("자동","오버로딩"));
+
+
+
+function f4(a,b){
+if(!isNaN(a) && !isNaN(b)){
+return a*b;
+}else{
+return a+b;
+}
+}
+
+
+document.write(typeof(f4));
+document.write(typeof(f4(10,20)));
+document.write(typeof(f4("문", "자")));
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
