@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+
+function tableCreate(){
+
+  var table_value = new Array();
+  var html = '';
+
+  table_value.push({value : '25.5', time : '2020-08-26'});
+  table_value.push({value : '22.4', time : '2020-08-26'});
+  table_value.push({value : '10.58', time : '2020-08-26'});
+  table_value.push({value : '3.44', time : '2020-08-26'});
+  table_value.push({value : '8.5', time : '2020-08-26'});
+
+  for(i in table_value){
+  html += '<tr>';
+  html += '<td>'+table_value[i].value+'</td>';
+  html += '<td>'+table_value[i].time+'</td>';
+  html += '</tr>';
+  }
+
+  $("#kgTable").empty();
+  $("#kgTable").append(html);
+
+}
+
+
+
+</script>
+
+<table id="kgTable" border="5">
+    <thead>
+    <tr>
+        <th>중량값</th>
+        <th>작동 시간</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<button onclick="tableCreate()">table_append</button>
+
+
+
+
+
+</body>
+</html>

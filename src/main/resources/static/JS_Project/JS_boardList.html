@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>boarlistJS</title>
+
+
+
+    <style>
+        table,tr,td,th{border:1px solid silver; border-collapse:collapse;
+        padding:5px; margin:5px;
+        }
+
+
+    </style>
+
+
 </head>
 <body>
 
@@ -14,10 +26,38 @@
 <br>
 <Br>
 <input type="button" id="output" value="게시물 조회">
-<div id="list">결과값
+<div id="list">
+
+    <table id="boardtable">
+        <caption>게시물</caption>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="boardtr" >
+            <td ></td>
+            <td ></td>
+            <td ></td>
+        </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+
+
+
+
 </div>
 
 
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script>
 
@@ -33,13 +73,12 @@ return "번호 : " + this.num + ", 제목 : " + this.title + ", 내용 : " + thi
 };
 
 
-let boardlist = new Array();
+  boardlist = new Array();
 
-let b1;
 
     document.getElementById("save").onclick=
     function(){
-     b1 = new board(document.getElementById("num").value,
+     let b1 = new board(document.getElementById("num").value,
     document.getElementById("title").value,
     document.getElementById("content").value);
 
@@ -47,37 +86,50 @@ let b1;
     //alert(b1.toString());
 
     boardlist.push(b1);
-
     alert(boardlist.length);
+
     }
 
 
-//function show(){
-//for(v in boardlist){
-//let a1 = (v + " : " + boardlist[v].toString());}}
+function tableCreate(){
+let newtb ="";
 
-
-
-
-
-
-    document.getElementById("output").onclick=
-    function(){
-    for(let p = 0; p<boardlist.length; p++){
-    document.getElementById("list").innerHTML=
-     boardlist[p].toString();}
+for(let p = 0; p<boardlist.length; p++){
+newtb += "<tr>";
+newtb += "<td>"+ boardlist[p].num + "</td>";
+newtb += "<td>"+ boardlist[p].title +"</td>";
+newtb += "<td>"+ boardlist[p].content +"</td>";
+newtb += "</tr>";
 }
+
+$("#boardtr").empty();
+$("#boardtable").append(newtb);
+
+
+}
+
+
+
+    document.getElementById("output").onclick =
+    function(){
+    tableCreate(); }
+
+
+
+
+
+    /*document.getElementById("t1").innerHTML=
+    boardlist[p].num;
+    document.getElementById("t2").innerHTML=
+    boardlist[p].title;
+    document.getElementById("t3").innerHTML=
+    boardlist[p].content;*/
+
 
 </script>
 
 
 
-<!--
-1. save 버튼 클릭하면 => 입력값 가져온다.
-2. 생성자 함수로 Board 객체 생성
-3. 배열에 저장
-4. output 버튼 클릭시 list 위치에 결과물 출력
--->
 
 
 
