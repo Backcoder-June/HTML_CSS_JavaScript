@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrow</title>
+</head>
+<body>
+<script>
+
+function f1(a){
+if( typeof(a) == "number"){return a*a;}
+else {return a;}
+}
+document.write(f1("hi"));
+
+let f2 = function(b){return b+b;}
+document.write(f2(10));
+document.write(f2("june" + "<br>"));
+
+// 함수내부 함수 포함
+function outer(){
+    function inner(){return "inner";}
+document.write(inner());
+}
+
+outer();
+
+let b = "<br>";
+
+
+// 함수 매개변수로 함수 포함
+
+function a1(a){
+if (typeof(a) == "function"){
+a();}
+else{ alert(a); }
+}
+
+//a 미정으로 넣어두고 실행까지 넣어둠
+
+function a2(){
+alert("a2실행입니다");
+}
+
+//그 a 로 a2 함수를 넣는것
+a1(a2);
+a1("hi");
+
+// 함수 리턴결과로 함수 주기
+
+
+function f1(){
+return function(){document.write("re hello");}
+}
+
+
+let f3 = f1();
+document.write(f3 + b);
+document.write(f3() + b);
+
+
+
+
+//
+
+function t1(){ document.write("--haha");}
+
+t1();
+t1(10);
+
+function t2(p,q){ document.write("--haha" + p + q + "<br>");}
+
+t2(7,9);
+t2(6,9,8);
+t2(5);
+
+t2([1,2], [3,4]);
+
+// 객체를 매개변수로
+let bb = {id:1, name:"홍길동"};
+
+t2(10, bb);
+
+
+function t5(p){
+document.write(p.id + " : " + p.name );
+}
+
+t5(bb);
+// 1 : 홍길동
+
+
+// 배열을 매개변수로 받을거다.
+// 받은 배열의 0 번째 인덱스를 출력할거다
+
+function t6(a){
+if(arguments.length>=1 && arguments[0] instanceof Array) {
+alert(a[0]);}
+}
+
+//t6();   // length 조건에서 걸림
+//t6(1,2);  // type 조건에서 걸림
+t6([777,5,10]);
+
+
+
+//function func(){
+//return 10*10;}
+
+let func = (x)=>{return x*x;}
+
+document.write(func(5) + "<br>");
+
+let func3 = x=> x*x;
+document.write(func3(10) + "<br>");
+
+
+// 바로 만들어서 사용
+document.write(( (x) => {return x+x;} )(3) + "<br>");
+document.write(( x =>  x+x )(3) + "<br>");
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

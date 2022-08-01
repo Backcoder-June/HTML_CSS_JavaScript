@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>browser_Object</title>
+</head>
+<body>
+<h1>browser info object</h1>
+
+<a href = "javascript:history.go(-1)"> 뒤로버튼 </a>
+<a href = "javascript:history.go(1)"> 앞으로버튼 </a>
+
+
+<input type="button" value="이동" id="move" >
+
+
+<script>
+document.getElementById("move").onclick = function(){
+location.href = "http://www.google.com";
+}
+
+
+
+
+
+
+let n = "<br>";
+    document.write(navigator.appCodeName + n);
+    document.write(navigator.userAgent + n);
+    document.write(navigator.platform + n);
+
+
+/*
+if(navigator.userAgent.indexof("Chrome") >= 0 ){
+ Chrome 이면 audio autoplay 안할게요
+} else if(navigator.userAgent.indexof("Edg") >= 0){
+ Edg 면 이렇게 할게요
+}
+*/
+// navigator.userAgent 활용 =>
+//이런식으로 브라우저별로 설정해둘 수 있다.
+// 화면크기, 179.19.19 IP 로 기기 정보 알고 그거에 따른 설정 해둘수 있다.
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

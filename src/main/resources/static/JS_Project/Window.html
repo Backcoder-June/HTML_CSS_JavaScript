@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+</head>
+<body>
+
+<input type="button" value="새창" id="openWindow">
+<input type="button" value="새창닫기" id="closeWindow">
+
+<div id="fromchild"></div>
+
+
+<script>
+    window.onload = function(){
+
+    let childWindow;
+    document.getElementById("openWindow").onclick =
+    function(){
+    childWindow = window.open("newPage.html", "new page", "width=400, height=500, left=50, top=50, resizable=yes, location=yes");
+
+childWindow.onload = function(){
+    childWindow.document.getElementById("newpage").innerHTML = "부모에서 데이터 전송받음";
+    childWindow.document.getElementById("newpage").style = "color:green";
+    }
+}
+    document.getElementById("closeWindow").onclick =
+    function(){
+    childWindow.close();
+    }
+
+
+
+    //
+    }
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

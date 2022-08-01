@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>geolocation</title>
+</head>
+<body>
+
+<input type="button" value="위치추적start" id="navstart">
+<input type="button" value="위치추적stop" id="navstop">
+<div id="result"></div>
+
+<script>
+    document.getElementById("navstart").onclick = function(){
+    navi1 = navigator.geolocation.watchPosition(success, fail);
+    }
+
+
+    document.getElementById("navstop").onclick = function(){
+    navigator.geolocation.clearWatch( navi1 );
+    document.getElementById("result").innerHTML =
+    "위치추적이 중지되었습니다."
+    }
+
+    function success(myposition){
+let lati = myposition.coords.latitude;
+let longi = myposition.coords.longitude;
+document.getElementById("result").innerHTML =
+   "위도 : " + lati + ", 경도 : " + longi;
+window.open("http://map.google.com?q=" + lati + "," + longi, "위치정보",
+"width=800, height=600, resizable=yes");
+
+    }
+
+
+
+
+    function fail(error){
+     document.getElementById("result").innerHTML =
+     "오류발생 " + error.code + ", 메세지 : " + error.message;
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

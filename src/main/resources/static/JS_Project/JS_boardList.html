@@ -73,7 +73,7 @@ return "번호 : " + this.num + ", 제목 : " + this.title + ", 내용 : " + thi
 };
 
 
-  boardlist = new Array();
+  let boardlist = new Array();
 
 
     document.getElementById("save").onclick=
@@ -86,7 +86,7 @@ return "번호 : " + this.num + ", 제목 : " + this.title + ", 내용 : " + thi
     //alert(b1.toString());
 
     boardlist.push(b1);
-    alert(boardlist.length);
+    alert(boardlist.length + "개 게시물이 저장되었습니다.");
 
     }
 

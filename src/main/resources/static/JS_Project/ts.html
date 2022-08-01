@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+
+function f1(){
+return function(){document.write("re hello");}
+}
+
+let f3 = f1();
+
+document.write(f1() + "<br>");
+
+f3();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+</head>
+<body>
+
+<script>
+
+function product (code, title, price, amount){
+this.code = code;
+this.title = title;
+this.price = price;
+this.amount = amount;
+this.setPrice = function(price){
+   this.price = this.price + price;};
+this.toString = function(){
+  return "상품정보 = " + this.title + " : " + this.price;  };
+}
+
+
+
+let p1 = new product("002", "lg컴퓨터", 30000, 20 );
+
+
+p1.setPrice(20000);
+p1.detail = "추가 정보";
+//delete p1.detail;
+if("detail" in p1){
+document.write("생성자 : "+p1 + " " + p1.detail +"<br>");
+} else {
+document.write("생성자 : "+p1 + "<br>");
+}
+
+
+  let pr2 = {
+  code : "01",
+  title : "삼성컴퓨터",
+  price : 45000,
+  amount : 10,
+  setPrice : function(price){
+  this.price = this.price + price;
+  },
+  toString : function(){
+  return "상품정보 = " + this.title + " : " + this.price;  }
+  }
+
+pr2.setPrice(10000);
+document.write(pr2 + "<br>");
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
