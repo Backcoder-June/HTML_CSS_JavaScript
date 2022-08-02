@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMCSS</title>
+</head>
+<body>
+<h1> 제목입니다. </h1>
+<div> 디브 내용입니다. </div>
+
+
+<script>
+// HTML 에서 style 로 CSS 주는게 기본인데, 이건 정적인 고정
+// 이걸 JS 에서 이벤트에따라 동적으로 바뀌는 CSS 를 만드는 방법
+
+
+//이렇게 바로줘도 되는데 길어지니까 따로 빼서 사용
+    //document.querySelector("h1").style="color:yellow; width="500px;";
+
+let h1 = document.querySelector("h1");
+h1.style.color = "green";
+h1.style.width = "500px";
+h1.style.backgroundColor="pink"; // - JS에서는 하이픈이 없으므로 대문자로 인식
+h1.style.borderColor = "yellow";
+h1.style.borderWidth = "2px";
+h1.style.borderStyle = "solid";
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

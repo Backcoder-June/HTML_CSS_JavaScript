@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>hi</h1>
+<div>june</div>
+
+
+<img src="a.jpg">
+<input id="test1" class="cl1" value="test1!">
+<input id="test2" class="cl1" value="test2!">
+<input id="test3" class="cl2" value="test3!">
+
+
+<script>
+
+//태그이름으로
+//let a = document.querySelector("h1");
+
+//alert(a.innerHTML);
+//hi
+
+//let b = document.querySelector("input");
+//alert(b.value);
+//test1
+
+//querySelectorAll => 해당하는 모든값 가져옴 => 배열
+//let c = document.querySelectorAll("input");
+//for(let i = 0; i<c.length; i++){
+//alert(c[i].value);}
+// test1 test2 test3
+
+//태그에 속성조건 걸어서 가져오기
+/*
+let d = document.querySelectorAll("input[class=cl1]");
+for(let i = 0; i < d.length; i++){
+alert(d[i].value);
+}
+*/
+
+//태그에 속성조건 2
+/*
+let d = document.querySelectorAll("input[class=cl1]:nth-child(3)");
+for(let i = 0; i < d.length; i++){
+alert(d[i].value);
+}
+// body 부터시작해서 카운트. h1 / div / input cl1 <= 3 번째
+*/
+
+//id로 가져오기
+
+//let t1 = document.querySelector("#test3");
+
+//alert(t1.value);
+
+//class로 가져오기
+
+/*
+let t2 = document.querySelectorAll(".cl1");
+
+for(let i = 0; i < t2.length; i++){
+alert(t2[i].value);}
+*/
+
+
+// getElement 대신 querySelector 로 가져와서 사용
+//태그까지 적용
+//document.querySelector("h1").innerHTML = "제목바꾸기";
+//document.querySelector("div").innerHTML = "<h3>제목바꾸기</h3>";
+
+
+// 텍스트내용으로 그대로 출력, 태그는 적용 안됨
+//document.querySelector("h1").textContent = "제목바꾸기";
+//document.querySelector("div").textContent= "<h3>제목바꾸기</h3>>";
+
+
+
+
+
+// DOM으로 태그 생성하기 "appendChild"
+
+// appendChild 라는건 자식을,부모 태그의 안으로 집어넣는다는 의미
+//  부모.appendChild(자식);
+
+let h3 = document.createElement("h3");
+  //<h3> </h3>형태를 생성
+
+  let h3text = document.createTextNode("텍스트노드생성");
+//h3.setAttribute( ); 이렇게 속성추가할수 있다.
+
+
+  h3.appendChild(h3text);
+  // h3 태그 만들고, 거기에 appendChild 해서 h3text 텍스트노드 붙임
+// ( 알아서 <h3> TextNode </h3> 이런 모양새로 붙여줌 )
+
+
+  //document.querySelector("div").innerHTML="";  // 초기화하고 붙이기 기술
+//  document.querySelector("div").appendChild(h3);
+  // div 에 ( h3text가 붙어있는 )h3을 붙임
+//<div> <h3> text </h3> </div>
+
+
+// appendChild 는 이미 존재하는 태그 대상으로하면 "이동" 효과 ( 맨 뒤로 )
+//document.querySelector("body").appendChild(document.querySelector("h1"));
+
+let loc = document.querySelector("div");
+
+// 기본적으로 append는 뒤쪽에 추가 => insertBefore 앞쪽에 추가
+document.querySelector("div").insertBefore(h3, document.querySelector("div").firstChild);
+
+
+//removeChild 자식태그 없애기 ( 먼저 부모를 찾아야함 )
+//document.querySelector("body").removeChild(document.querySelector("img"));
+
+//replaceChild ( 교체할 노드 , 원래 노드 );
+// => 교체할 노드의 위치 이동됨 ( 복사 X )
+//document.querySelector("body").replaceChild(document.querySelector("h1") ,document.querySelector("img"));
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

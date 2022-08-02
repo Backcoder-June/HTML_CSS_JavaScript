@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type = text id="hi" name="hoho" value="study">
+
+<script>
+let qr = document.querySelector("input");
+
+//alert(qr.id);
+//alert(qr.hasAttribute("id"));
+
+alert(qr.getAttribute("name"));
+
+qr.setAttribute("name","hobby");
+alert(qr.getAttribute("name"));
+
+qr.removeAttribute("name");
+alert(qr.getAttribute("name"));
+
+</script>
+
+
+</body>
+</html>

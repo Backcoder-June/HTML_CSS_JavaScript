@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="form" action="server.jsp">
+    id : <input type="text" id="id" name="id" > <br>
+    암호1 : <input type="password" id="pw1" name="pw"> <br>
+    암호재확인 : <input type="password" id="pw2" name="pw"> <br>
+
+    <input type="submit" value="로그인">
+</form>
+
+<script>
+
+    document.querySelector("#form").addEventListener("submit",
+    function(e){
+    //alert(document.querySelector("#id").value;
+    // 아이디입력안했을때 어떻게 들어오는지 확인 => "" 공백으로 들어옴
+    // 태그 #아이디 값 자체가 잘못 => null
+
+//아이디 필수입력하게 만들기 JS 로직 ( HTML 속성 required 로 줘도됨 )
+/*
+    if(document.querySelector("#id").value==''){
+    alert("아이디 필수 입력");
+    e.preventDefault();  }
+*/
+
+    if(document.querySelector("#pw1").value == document.querySelector("#pw2").value){
+    alert("submit 가능");
+    } else {
+    alert("submit 불가능");
+    e.preventDefault();
+    //document.querySelector("#form").action="";
+    //e.target.action="";
+    //this.action="";   action 속성을 비워서 작동안하게도 할 수 있음
+    }
+
+    }
+    , false);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

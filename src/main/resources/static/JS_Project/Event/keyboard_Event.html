@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboard</title>
+</head>
+<body>
+<form action="a.jsp">
+  폰번호 : <input type="text" id="phone" name="phone" pattern="010[0-9]{3,4}[0-9]{4}">
+
+    <div id="output">입력내용</div>
+
+
+  <input type="submit" value="submit">
+</form>
+
+
+<script>
+    addEventListener('load', function(){
+
+    let count = 0;
+    document.querySelector("#phone").addEventListener('keydown',
+    function(e){
+    //숫자인지만 판단가능 로직
+    /*if(e.keyCode >=48 && e.keyCode<=57){
+    document.querySelector("#output").innerHTML
+    = (e.key) + " = 적합 ";
+    document.querySelector("#output").style.color = "green";
+    }else{
+    document.querySelector("#output").innerHTML
+    = (e.key) + " = 부적합 ";
+    document.querySelector("#output").style.color = "red";
+    }
+    */
+
+    // 숫자 11개에, 처음시작 010 인지 확인 로직
+
+/*    count++;
+    if(count ==11 && document.querySelector("#phone").value.indexOf("010") == 0 ){
+document.querySelector("#output").innerHTML
+    =  document.querySelector("#phone").value;
+    document.querySelector("#output").style.color = "green";
+    }else{
+document.querySelector("#output").innerHTML
+    =  "아직 올바른 형식이 아닙니다."
+    document.querySelector("#output").style.color = "red";
+    }
+*/
+
+// regx 버전
+
+let regex = /^010[0-9]{3,4}[0-9]{4}$/;
+let phone = document.querySelector("#phone").value;
+// let phone = e.target.value; e.target = 현재 이벤트가 발생한 "그" 태그
+// let phone = this.value;  this = 현재 이벤트가 발생한 "그" 태그 의미. 이건 e 객체 없을 때 사용 가능
+
+
+    if(phone.match(regex) != null ){
+document.querySelector("#output").innerHTML
+    =  document.querySelector("#phone").value;
+    document.querySelector("#output").style.color = "green";
+    }else{
+document.querySelector("#output").innerHTML
+    =  "아직 올바른 형식이 아닙니다."
+    document.querySelector("#output").style.color = "red";
+    }
+
+
+
+
+
+let ex = "123214";
+
+//alert(ex.match(regex));
+
+
+
+
+
+
+
+    }
+    , false);
+
+
+    }, false);
+
+
+
+</script>
+
+
+</body>
+</html>

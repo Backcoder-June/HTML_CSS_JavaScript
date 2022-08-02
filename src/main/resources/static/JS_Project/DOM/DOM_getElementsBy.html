@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>쇼핑목록</title>
+</head>
+<body>
+<h1>쇼핑 목록</h1>
+<p>마트에서 사야할 목록</p>
+<p>마트에서 사야할 목록2</p>
+<p>마트에서 사야할 목록3</p>
+<ul id="buy" class="list">
+    <li>두부</li>
+    <li>계란</li>
+    <li>라면</li>
+</ul>
+
+
+<form action="test.jsp">
+<input type="checkbox" id="hobby" name="hobby" value="music"> 음악감상 <br>
+<input type="checkbox" name="hobby" value="coding"> 코딩 <br>
+<input type="checkbox" name="hobby" value="reading"> 독서 <br>
+<input type="checkbox" name="hobby" value="movie"> 영화감상 <br>
+
+
+<br>
+<hr>
+
+<input type="radio" name="time" value="1"> 1시간 <br>
+<input type="radio" name="time" value="2"> 2시간 <br>
+<input type="radio" name="time" value="3"> 3시간 <br>
+<input type="radio" name="time" value="4"> 4시간 <br>
+
+
+    <input type="submit" value="전송">
+</form>
+
+<h1></h1>
+
+<div></div>
+
+<input type="text">
+
+
+
+
+
+
+
+<script>
+
+
+///
+    let buylist = document.getElementById("buy");
+
+
+//getElementsByTagName(" ");
+// 태그명으로 가져오기
+// 태그는 여러개일 수 있으므로, 배열타입으로 가져온다.
+    let p_array = document.getElementsByTagName("p");
+
+    //document.write(p_array.length);
+
+//    alert(p_array[1].innerHTML);
+
+//let li_array = document.getElementsByTagName("li");
+
+//document.write(li_array[1].innerHTML);
+
+
+
+
+//getElementsByClassName(" ");
+// class명으로 가져오기
+// class는 여러개 중복지정 가능하므로, 배열타입으로 가져온다.
+let class_array = document.getElementsByClassName("list");
+
+//document.write(class_array[0].innerHTML);
+
+
+//childNodes 로 가져오기 - 이건 잘 안쓰이는 방법
+let buy = document.getElementById("buy");
+
+let ul_child_array= buy.childNodes;
+
+//document.write(ul_child_array.length);
+// li 요소노드3 + 텍스트노드3 + 엔터1 = 7
+
+/*
+for(let i =0; i< ul_child_array.length; i++){
+if(ul_child_array[i].nodeType == 1){
+document.write(ul_child_array[i].nodeValue);}
+*/
+// nodeType 은 정해져있음
+
+
+//getElementByName(" ") 으로 가져오기
+
+//input, checkbox, radio, textarea 등 name 값 주는 태그에
+// form 태그로 감싸고, name 변수에 담아 action 으로 보냄
+
+
+let hobby_array = document.getElementsByName("hobby");
+
+for(let i = 0; i< hobby_array.length; i++){
+document.write(hobby_array[i].value + "<br>");
+}
+
+// music coding reading movie
+
+// input[type=submit] / CSS 문법 - input타입중 type속성 submit 인것
+
+//let query = document.querySelector("input[type=submit]");
+
+//document.write(query.value + "<br>");
+
+let checkarray = document.querySelector("input[type=checkbox]:nth-child(7)");
+
+//document.write(checkarray instanceof Array);
+
+//document.write(checkarray.value);
+
+let all = document.querySelectorAll("input[type=checkbox]");
+
+//document.write(all instanceof Array);
+
+for(let i =0; i<all.length; i++){
+document.write(all[i].value);
+}
+
+
+all[0].value = "음악감상";   //벨류값 수정
+document.write(all[0].value);
+
+//있으면 지워
+if(all[0].hasAttribute("value")){
+all[0].removeAttribute("value")
+}
+
+document.write(all[0].hasAttribute("value"));
+
+
+-----
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
