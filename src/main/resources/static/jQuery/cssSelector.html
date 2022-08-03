@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+
+    <script src="jquery-3.6.0.min.js"></script>
+
+<!--    <script>$(function (){initialize();});</script>-->
+
+
+    <script>
+
+        let a = 10;
+
+        document.write("hello");
+
+
+$(document).ready(function(){
+
+//문법
+// Getter 용도
+//$("적용대상").css( "css속성" ) 가져와라
+
+alert($("#second").css("color"));
+=> rgb (200, 230, 400)
+
+// Setter 용도
+//$("적용대상").css( "css속성", "값" );
+
+
+//아이디로 주기
+$("#second").css("color", "pink");
+
+//태그에 주기
+//$("h1").css("color", "yellow");
+//$("td").css("color", "yellow");
+// 기본 모든 태그에 적용
+// td 태그중에 순번 정해서 적용 ( id 로 하면 좋긴한데 너무 많을 때 )
+
+//$("td:first").css("color", "yellow");
+// 첫번째 등장하는 td 태그 선택
+//$("td:first-child").css("color", "yellow");
+// css + jquery 새로운 의미 : td태그의 부모태그로 거슬러 올라가서
+//첫번째 태그이고 td 여야 한다
+// => tr 에서 첫번째인 td들 전체에 적용, 즉 번호에만 쫙 적용
+
+//$("td:last-child").css("color", "yellow");
+// tr에서 마지막인 td 전체에 적용 => 즉 작성자 에만 쫙 적용
+
+//even odd 사용 ( jquery용 )
+//$("tr:even td").css("color", "yellow");
+//$("tr:odd td").css("color", "pink");
+// 짝/홀수번째인 tr의 모든 td 에 적용
+// tr이 th 도 가지고 있기때문에, index 0 번은 th. index 홀짝에 따라 적용
+
+//eq  gt  lt  사용  (index 순서로 셈)
+//$("tr:eq(3) td").css("color", "pink"); //3번인덱스 equal
+//$("tr:gt(3) td").css("color", "yellow"); //3번인덱스보다 greater than
+//$("tr:lt(3) td").css("color", "blue");    //3번인덱스보다 less than
+
+// select 태그
+//$("select option:selected").css("color", "pink");
+// select 태그에서 option 이 selected 인거 가져와라
+
+
+
+
+//$("tr:nth-child(2n)").css("color", "pink");
+// 여기서 nth 는 index가 아니라 n번째줄 의미로 적용
+
+
+//document.querySelectorAll("h1")[0].style.color = "red";
+
+//클래스에 주기
+//$(".red").css("color", "blue");
+
+// 자손포함관계로 주기
+//$("h1 a").css("color", "green");
+
+// 여러대상에 콤마로 동시에 주기
+//$("h1, td").css("color", "olive");
+
+// and 조건주기 ( 공백없이 바로 붙여서 )
+//$("h1#second").css("color", "orange");
+// h1이면서 아이디가 second 인것에 적용
+
+//$("h1.red").css("color", "red");
+// h1이면서 클래스가 red 인 것에 적용
+
+// 태그에 속성조건 걸어서 주기
+//$("input[type = button]").css("color", "yellow");
+
+//타입조건만 줄때는 :(filtering) 으로만 줘도 된다.
+// 이태그에서 : 이걸 가진것만 가져와
+//$("input:checked").css("color", "green");
+// input 태그중에 checked 속성 가진것만 가져와 (checked checked - checkbox,radio에 적용 )
+
+//$("input:text").css("color", "yellow");
+//$("input:button").css("color", "yellow");
+// input 태그중에 타입이 text, button 인것에 적용
+
+// 태그 속성조건에 와일드카드 조건 주기
+//$("input[type^=te]").css("color", "yellow");
+// input 태그중에 type이 te 로 "시작하는" 것에 적용
+
+//$("input[type$=l]").css("color", "pink");
+// input 태그중에 type이 l로 "끝나는" 것에 적용
+
+//$("input[type*=e]").css("color", "green");
+// input 태그중에 type이 e 를 "포함"하는 것에 적용
+
+
+
+
+
+
+
+});
+
+    </script>
+</head>
+<body>
+
+<h1 class="red"> 제목1 </h1>
+<h1 id="second"> 제목2</h1>
+<h1> <a href="a.html"> 링크1 </a></h1> <!--  a태그 기본 이벤트핸들러 내장(자동이동+글씨 파랑색 밑줄+배경색지정x)  -->
+<a class="red" href="b.html"> 링크2 </a><br>
+<input type=text value="기본문자열"><br>
+<input type=password value="기본암호"><br>
+<input type=tel value="기본"><br>
+<input type=url value="http://"><br>
+<input type=email value="a@b.com"><br>
+<input type=button value="버튼"><br>
+<button>버튼2</button>
+<table>
+    <tr><th>번호</th><th>제목</th><th>내용</th><th>작성자</th></tr>
+    <tr><td>1</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>2</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>3</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>4</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>5</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>6</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+    <tr><td>7</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+</table>
+
+
+
+
+</body>
+</html>

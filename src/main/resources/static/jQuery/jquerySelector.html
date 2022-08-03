@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquerySelector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+
+
+</head>
+<body>
+<script>
+$(document).ready(function(){
+// DOM 에서
+// document.querySelector("input").addEventListener("click",f1,false);
+
+//이걸 jquery 로 => on / off
+//$("input:button").on("click", f1 );
+//$("input:button").click(f1);  //이렇게도 된다. 편의에 따라 사용.
+
+// removeEventListener  // 함수 선택안해두면 모든 함수 제거
+//$("input:button").off("click");
+//$("input:button").off("click", f1 ); 함수 선택해서 제거도 되고.
+
+
+//-----------------------
+
+
+$("h1#first").css("border", "2px solid yellow" );
+$("h1#first").css("width", "300px" );
+
+
+function f1(){
+$("div#last").append( $("h1#first").html() ); }
+
+//onclick비슷한 방식
+$("h1#first").click(f1);
+
+// 리스너 비슷한 방식 on
+$("h1#first").on("click", function(){
+$("div#last").css("border", "2px solid blue" );
+$("div#last").css("width", "200px" );
+$("div#last").append("이벤트추가 마치 리스너처럼된다 jquery도");
+});
+
+// removeEventListener 기능 off
+$("input:button").on("click", function(){
+    $("h1#first").off("click", f1);
+});
+
+
+
+
+
+
+        });
+</script>
+
+<h1 id="first"> 클릭해봐 </h1>
+<input type="button" value="이벤트stop">
+<div id="last"></div>
+
+
+</body>
+</html>

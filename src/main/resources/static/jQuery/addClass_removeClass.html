@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>style</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+<style>
+    .a{
+    color:aqua;
+    background-color:silver;
+    }
+
+    .box{
+    width : 300px;
+    height : 300px;
+    border : 3px solid yellow;
+    }
+</style>
+    <script>
+    $(document).ready(function(){
+//jquery 에서 태그 선택할때 , 쉼표로 동시에 여러태그 선택할 수 있다.
+//$("h1, h3").addClass("box);
+
+/*
+클래스 속성 추가하기 => 기본 해당태그 전체에 적용
+    $("h1").addClass("a");
+    $("h1").addClass("box");
+ addClass 도 띄어쓰기로 구분해서 한번에 줄 수 있다.
+    $("h1").addClass("a box");
+
+*/
+
+//클래스 속성 삭제하기
+    $("h1").removeClass("box");
+
+/*
+HTML 에서 class 속성등은 여러개값을 줄 수 있다. => 띄어쓰기로 구분
+<h1 class="a box">
+
+*/
+
+
+
+    });
+    </script>
+
+</head>
+<body>
+
+<h1>클래스 속성제어</h1>
+<h1>클래스 속성제어2</h1>
+<h2>addClass 함수</h2>
+<h3>removeClass 함수</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

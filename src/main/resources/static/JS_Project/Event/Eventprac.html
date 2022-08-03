@@ -11,7 +11,53 @@
 
 <textarea id="text" rows="5" cols="50" name="text"></textarea>
 
-<input type="reset" value="새로 입력">
+<input type="button" value="새로 입력">
+
+<script>
+let textarea = document.querySelector("textarea");
+let button = document.querySelector("input[type=button]");
+let h1_count = document.querySelector("h1");
+let h2_msg = document.querySelector("h2");
+
+let total_len = parseInt(h1_count.innerHTML);
+
+let noticing = function(){
+let current_len = textarea.value.length;
+let remain_len = total_len - current_len;
+h1_count.innerHTML = remain_len;
+h2_msg.innerHTML = "글자 남았습니다.";
+h2_msg.style.color = "green";
+
+if(remain_len==0){
+textarea.setAttribute("readonly", "readonly");
+h2_msg.innerHTML = "더이상 입력 불가능합니다."
+h2_msg.style.color = "red";
+
+}
+};
+
+
+
+
+textarea.addEventListener("keypress", noticing, false);
+
+
+button.addEventListener("click",
+ function(){
+ textarea.value = "";
+ textarea.removeAttribute("readonly");
+ h2_msg.innerHTML = "다시 작성해봅시다.";
+ h1_count.innerHTML = "20";
+ textarea.focus();
+
+ }
+
+
+ , false);
+
+
+
+
 
 // keyevent 처리 키 입력시 마다
 // =>  xx 글자 남았습니다.  로 출력되게
@@ -20,6 +66,8 @@
 // 새로입력버튼 클릭시
 // textarea 입력내용 삭제 / readonly 속성 삭제 (removeAttribute) 사용
 
+
+</script>
 
 
 

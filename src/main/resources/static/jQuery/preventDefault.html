@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preventDefault</title>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<a href="a.html"> 리이잉크 </a>
+
+<form id="form" action="a.jsp">
+    <table border="5px">
+        <tr>
+            <th>사용자</th>
+            <th>과정명</th>
+        </tr>
+        <tbody>
+        <tr>
+            <td>
+                사용자 : <input type="text" id="name" name="name" >
+            </td>
+            <td>
+                과정명 : <input type="text" id="subject" name="subject" >
+            </td>
+        </tr>
+<tr>
+    <th colspan="2">
+        <input type="submit" value="SUBMIT">
+    </th>
+</tr>
+        </tbody>
+    </table>
+    <br>
+</form>
+
+<div id="here">here</div>
+<script>
+$(document).ready(function(){
+
+// preventDefault 내장이벤트 jquery 로 제거하기 ( JS동일 )
+$("a").on("click", function(e){
+e.preventDefault();
+});
+
+let userlist = ['김희원', '유재석', '이승기', '조승우' ];
+let subjectlist = ['ai', 'bigdata', 'fullstack', 'kotlin' ];
+
+$("#form").on("submit", function(e){
+
+for(let i =0; i<userlist.length; i++){
+if( $("#name").val == userlist[i] ){
+$("#here").innerHTML = "yes";
+} else{e.preventDefault();  }
+}
+
+
+});
+
+
+/*
+for(let j =0; j<subjectlist.length; j++){
+if(  $("#subject").val == subjectlist[j]){
+alert("yesyes");
+}}
+}
+}
+*/
+
+
+
+
+
+//
+});
+
+// 1.사용자명 중복 거르고
+// 2. 과정명 list 에 존재해야 한다
+// 3, 모두만족하면 submit 진행
+// 만족못하면 alert 하고 submit 기본동작 막기
+
+
+/* includes 는 문자열에 character 포함 확인용. 배열에 포함하는거 있는지 확인하는
+contains 같은 함수는 JS 는 지원 안함
+$("input:submit").on("click", function(e){
+if( userlist.includes($("#name").val) ){
+alert("yes");
+  } else {alert("no"); }
+*/
+
+
+</script>
+
+</body>
+</html>

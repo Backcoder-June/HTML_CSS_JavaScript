@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+   <script>
+    $(document).ready(function(){
+
+//document.querySelector("#contents").innerHTML
+//= "<input type=password value='1234' >";
+//이걸 jquery로
+//$('#contents').html("<input type=password value='1234' >");
+// = 안하고 ( ) 괄호에 내용을넣어주는 방식이다
+
+// 원래거 get 해서 추가하는방식으로 사용
+//$('#contents').html($('#contents').html() +
+//" <input type=password value='1234' >");
+//이걸 해주는게 append 기능, 즉 뒤에 그대로 가져다 붙이는 기능
+$('#contents').append("<input type=password value='1234' >");
+
+//alert($('#contents').html());
+
+// 삭제하기
+$('#contents').html("");   이렇게 빈값줘서 삭제
+//css 에서도 빈값줘서 삭제
+// $('#contents').css("color", "");
+
+
+
+
+
+
+
+    });
+</script>
+</head>
+<body>
+
+<div id="contents">
+    <input type="text" value="jquery">
+
+</div>
+
+
+
+
+
+</body>
+</html>

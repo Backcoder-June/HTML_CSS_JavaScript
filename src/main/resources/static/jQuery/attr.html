@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attri</title>
+  <script src="jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function(){
+
+// <SET>
+// attr 로 하나하나씩 속성주기
+  $("img:first").attr("src","blackcoffee.gif");
+  // attr ( A, B ) :  A 에 B 를 넣어라
+  $("img").attr("width", "100");
+  $("img").attr("height", "100");
+  $("img:first").attr("alt","쥬스 사진입니다");
+
+// 객체를 만들어서 객체형태로 set 할 수도 있다.
+  $("img:last").attr({
+  src : "blackcoffee.gif",
+  alt : "커피사진입니다.",
+  width : "200",
+  height : "200"
+  });
+
+// <GET>
+    //$('img:first').attr("src")
+    // img 태그의 first 에서 속성 src 를 가져와라
+//alert($('img:first').attr("src"));
+
+
+//alert($('img:last').attr("src", $('img:first').attr("src") ));
+// src 가져와서 B 로 교체해
+
+//alert($('img').attr("src"));
+// 모든 img 태그의 src 속성 가져와 x
+// getter 는 복수개에서 사용시 첫번째거 하나만 가져온다 => 반복문으로 뽑아야함
+// eq 함수 활용! ( index )
+
+
+// $('img').length 이거 사용 가능하다. 모든 img 찾아서 배열취급해줌
+//1. eq 인덱스 사용 해서 뽑기 // i 는 변수므로 따옴표 끊어서 처리해야함
+//for(let i = 0; i < $('img').length; i++){
+//alert( $('img:eq('+ i +')').attr("src")); }
+
+//2. jquery전용 반복문 내장 함수 each( function(i){ 반복할문장 i 번만큼 } )
+// 이건 i 몇번인지 안줘도되고 있는 동안 을 의미. foreach처럼
+
+//$('img').each(function(i){
+//  alert( $('img:eq('+ i +')').attr("src"));  })
+
+//이거 그냥 JS (돔방식) this 사용해서
+// i 있는동안 => 현재 태그의 src 속성 가져오기
+//$('img').each(function(i){
+//  alert( this.src );  })
+
+// jquery 로 this 사용하고, get 하기
+//$('img').each(function(i){
+//  alert( $(this).attr("src") );  })
+
+// 속성제거 removeAttr  ( 지울땐, 복수개여도 반복문 필요없음 )
+//$("img").removeAttr("src");
+
+// set 할때는 전체에 적용된다.
+//$('h1').css('color', 'red');
+//근데 이걸 매번 동적으로 다른 색상값을 주고싶을 때 => 콜백함수 사용
+/*
+$('h1').css('color',
+function(index){
+조건주고 return 으로 색 주면 됨
+return 'red' }
+);
+*/
+
+
+
+
+
+
+
+// 내가 태그를 만들어만 놓고 이벤트 걸어두고 그 때 보여주겠다.
+// 그때 JS 에서 img 를 set 하는 방법이 attr 를 사용하는 것.
+// attr 로 src 불러오고, wid hei 속성들도 지정하고 alt 도 지정해둘 수 있다.
+// first : img 태그중에 첫번째
+
+
+  });
+
+
+</script>
+</head>
+<body>
+
+<img>
+<img>
+
+
+</body>
+</html>

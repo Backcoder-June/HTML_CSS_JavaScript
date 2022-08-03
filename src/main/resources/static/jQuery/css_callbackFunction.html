@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback</title>
+  <script src="jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+
+    $("div").css('color', function(i){
+
+//let array = ['red', 'blue', 'orange', 'pink', 'yellow', 'olive ];
+//return array[i%6];  나머지로하면 반복하면서 적용/ 이렇게도 사용할 수 있다
+
+    if(i == 0){return "red"; }
+    else if(i ==1){return "green";}
+    else if(i ==2){return "blue";}
+    else if(i ==3){return "orange";}
+    else { return "pink";}
+    })
+        });
+    </script>
+</head>
+<body>
+
+<div>1번쨰</div>
+<div>2번쨰</div>
+<div>3번쨰</div>
+<div>4번쨰</div>
+<div>5번쨰</div>
+<div>6번쨰</div>
+
+
+
+</body>
+</html>

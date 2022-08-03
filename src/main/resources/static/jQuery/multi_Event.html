@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multi</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div id="box"></div>
+<script>
+$(document).ready(function(){
+
+//적용할 css 객체형태{ }로 만들어놓고 사용 할수 있다.
+$("div#box").css({
+height : "100px",
+width : "100px",
+backgroundColor : "orange"
+});
+
+
+//하나의 태그에 대해, 여러종류의 이벤트를 걸기
+// 이렇게 세번 이벤트를 줘도 되고
+/*
+$("div#box").on("click", function(){
+$(this).css("background-color", "green");
+});
+
+$("div#box").on("mouseenter", function(){
+$(this).css("background-color", "yellow");
+});
+
+$("div#box").on("mouseleave", function(){
+$(this).css("background-color", "blue");
+});
+*/
+
+// 이렇게 on 안에 {  } 객체형태로 묶고, , 쉼표로 하나하나 줘도 된다.
+/*
+$("div#box").on(
+{
+click : function(){$(this).css("background-color", "green");},
+mouseenter : function(){$(this).css("background-color", "pink");},
+mouseleave : function(){$(this).css("background-color", "black");}
+}
+);
+*/
+
+//여기에 e 이벤트객체 사용해서 정보도 표시해줄 수 있다.
+$("div#box").on(
+{
+click : function(e)
+{$(this).css("background-color", "green");
+$(this).html(event.type);
+},
+mouseenter : function(e)
+{$(this).css("background-color", "pink");
+$(this).html(event.type);
+},
+mouseleave : function(e)
+{$(this).css("background-color", "black");
+$(this).html(event.type);
+}
+}
+);
+
+
+
+
+
+
+
+
+
+
+});
+</script>
+
+</body>
+</html>
