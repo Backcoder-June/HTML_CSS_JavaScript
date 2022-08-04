@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+<h1> 태그 show hide</h1>
+<h1> 태그 fadeIn fadeOut </h1>
+<h1> 태그 slideUp slideDown </h1>
+<h1> 태그 animate </h1>
+
+<script>
+    $(document).ready(function(){
+//    $("h1:eq(0)").hide();
+//    $("h1:eq(0)").show();
+//    $("h1:eq(1)").fadeOut(3000);
+//    $("h1:eq(1)").fadeIn(3000);
+//    $("h1:eq(2)").slideUp(3000);
+//    $("h1:eq(2)").slideDown(3000);
+
+
+
+     $("h1:eq(3)").css({
+     width : "500px",
+     backgroundColor : "green"
+     });
+
+// 시간 딜레이주기
+     $("h1:eq(3)").delay(2000);
+
+//에니메니트 효과주기 animate( {객체로속성주기}, 얼마시간동안 );
+    $("h1:eq(3)").animate({
+     width : "1000px",
+     backgroundColor : "blue"} , 5000
+      );
+//jquery-ui 라이브러리 설치하면 배경색도 변경 가능
+
+
+
+
+    });
+</script>
+
+<!--
+jquery 시각효과
+$("태그").효과( 1/1000sec );
+$(  ).hide( );
+$(  ).show( );
+
+$(  ).fadeOut( );
+$(  ).fadeIn( );
+
+$(  ).slideDown( );
+$(  ).slideUp( );
+
+$(  ).animate(function( ){ 사용자정의여러개 섞어사용 } );
+-->
+
+
+
+
+
+</body>
+</html>

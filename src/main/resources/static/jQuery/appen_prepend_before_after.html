@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>append</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+<input type=button value="클릭" id="btnclick">
+<input type=button value="중단" id="btnstop">
+<div id="newbuttons"></div>
+<div id="keyout"></div>
+
+<script>
+$(document).ready(function(){
+
+
+
+    // append => 뒤로 쭉 붙임  / 1 2 3 4 5
+    // prepend => 앞으로 쭉 붙임  /  5 4 3 2 1
+    // before => 해당 태그의 앞쪽 바깥에 1 2 3 4 5 append 방식
+    // after => 해당 태그 뒤쪽 바깥에 5 4 3 2 1 prepend 방식
+    let count = 0;
+    $("#btnclick").on("click",function(){
+        $("#keyout").html( ++count + " 번 클릭했습니다. " );
+        $("#newbuttons").append
+        ("<input type='button' value ='new_button" + count + "' id = 'newbut' >");
+    });
+
+
+
+// 동적으로 JS 로 만든 버튼에 이벤트를 걸때는 원래 하던대로 하면 안됨 (DOM 에서 인지하지못함 )
+// $("생성되는 동적태그의 부모태그").on( "이벤트종류", "생성될 동적태그", 함수 );
+    $("#newbuttons").on("click", "input:button", function(){
+        $("#keyout").html($(this).val());
+    });
+
+
+
+//이벤트 중단
+    $("#btnstop").on("click",function(){
+
+// 비우기 - html 비우기 / empty() 메소드 => 해당태그 내용을 지우는 것
+        //$("#newbuttons").html("");
+        $("#newbuttons").empty();
+
+// remove()메소드 => 해당 태그를 지우는 것
+        //$("#newbuttons").remove();
+
+        $("#btnclick").off("click");
+    });
+
+
+
+
+
+
+
+});
+
+</script>
+
+
+</body>
+</html>

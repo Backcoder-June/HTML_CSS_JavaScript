@@ -45,26 +45,50 @@ e.preventDefault();
 let userlist = ['김희원', '유재석', '이승기', '조승우' ];
 let subjectlist = ['ai', 'bigdata', 'fullstack', 'kotlin' ];
 
+let find1 = false;
+let find2 = false;
+let message = "";
+// boolean 하고 message 전역으로 걸어놓고 조건에 따라 값을 주고
+// 최종적으로 밑에서 boolean 결과에따라 message 를 주는방식으로 설계해야
+// 반복문 돌때마다 메세지가 출력되는등의 오류를 막을 수 있다.
+// boolean 전역변수 사용 익숙해지자
+
 $("#form").on("submit", function(e){
 
 for(let i =0; i<userlist.length; i++){
-if( $("#name").val == userlist[i] ){
-$("#here").innerHTML = "yes";
-} else{e.preventDefault();  }
+if( $("#name").val() == userlist[i] ){
+find1 = true;
+message = " 중복된 이름입니다. ";
+//e.preventDefault();
+break;
+}
+}
+//
+
+for(let j =0; j<subjectlist.length; j++){
+if( $("#subject").val() == subjectlist[j]){
+find2 = true;
+//e.preventDefault();
+break;
+  }
+}
+
+if(find1 == true){
+ alert(message);
+ e.preventDefault();
+ $("input:text:first").val("");
+ $("input:text:first").focus();
+ }
+
+if(find2 == false){
+alert("해당 과정은 존재하지 않습니다.");
+e.preventDefault();
+$("input:text:last").val("");
 }
 
 
 });
 
-
-/*
-for(let j =0; j<subjectlist.length; j++){
-if(  $("#subject").val == subjectlist[j]){
-alert("yesyes");
-}}
-}
-}
-*/
 
 
 

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Scroll</title>
+    <script src="jquery-3.6.0.min.js"> </script>
+    <script>
+
+        $(document).ready(function () {
+
+                    // 문서 객체를 생성합니다.
+            var appendDocument = function () {
+                for (var i = 0; i < 20; i++) {
+                   // $('<h1>Infinity Scroll</h1>').appendTo('body');
+                    $('body').append('<h1>Infinity Scroll</h1>');
+                }
+            };
+            appendDocument();
+
+
+            // window.onscroll = function(){} // 스크롤하면 함수 실행
+            // (jquery) => $(window).scroll(function(){ } //제이쿼리버전
+
+            $(window).scroll(function () {
+                //스크롤이전가려진부분 높이 + 현재뷰포트높이
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();//문서높이
+                if (scrollHeight == documentHeight) {
+                    appendDocument();
+                }
+            //스크롤 이벤트가 발생할 때,만약 전체 doc 길이 == 현재뷰포트길이 + 위에 길이 가 같아지면
+            // 또 20개 추가해라 => 무한스크롤
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
